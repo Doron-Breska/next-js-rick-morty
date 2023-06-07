@@ -1,0 +1,19 @@
+.border {
+    border: 3px dotted lightseagreen;
+    border-radius: 5px;
+}
+
+.charactersContainer { 
+    width: 80%; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    margin: 0 auto;
+}
+.charcterCard{
+    width: 250px;
+    text-align: center;
+    color: black;
+    
+}
