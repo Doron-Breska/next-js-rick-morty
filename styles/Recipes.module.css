@@ -12,8 +12,32 @@
     margin: 0 auto;
 }
 .charcterCard{
-    width: 250px;
+    width: 300px;
     text-align: center;
     color: black;
-    
+    border: 2px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white;
 }
+.charcterCard img {
+ width:296px ;
+}
+.moreInfoPage { 
+    margin: 3rem auto;
+    width: 350px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border: 3px dotted black;
+    border-radius: 5px;
+    overflow: hidden;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+/* 
+.indexCharacterPage{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+} */

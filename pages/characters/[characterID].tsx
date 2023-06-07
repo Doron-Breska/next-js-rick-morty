@@ -1,19 +1,21 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Link from "next/link";
 import React from "react";
+import styles from "../../styles/Recipes.module.css";
 
 type Props = {
   data: Character | null;
   error: string | null;
+  characterID: string | string[] | undefined;
 };
 
-const character = ({ data }: Props) => {
+const character = ({ data, characterID }: Props) => {
   if (!data) {
     return <div>Error: Character not found</div>;
   }
 
   return (
-    <div>
+    <div className={styles.moreInfoPage}>
       <Link href="/characters">
         <button>Go back</button>
       </Link>
@@ -22,6 +24,28 @@ const character = ({ data }: Props) => {
       <p>Status: {data.status}</p>
       <p>Gender: {data.gender}</p>
       <img src={data.image} alt={data.name} />
+      <h2>Test for passing information with context</h2>
+      <p>Test - character ID from context.params is: {characterID}</p>
+      <div style={{ display: "flex", justifyContent: "space-around" }}>
+        <Link
+          href={
+            characterID == "1"
+              ? "/characters/20"
+              : `/characters/${characterID && +characterID - 1}` // + before the variable convert it to type number cause it's a string
+          }
+        >
+          <button>Prev</button>
+        </Link>
+        <Link
+          href={
+            characterID == "20"
+              ? "/characters/1"
+              : `/characters/${characterID && +characterID + 1}` // + before the variable convert it to type number cause it's a string
+          }
+        >
+          <button>Next</button>
+        </Link>
+      </div>
     </div>
   );
 };
@@ -41,26 +65,23 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async (context) => {
-  console.log("this is the Context object :", context);
-  // Check if context.params is defined
   if (!context.params) {
     return {
       props: {
         data: null,
         error: "CharacterID is not provided in the context",
+        characterID: undefined,
       },
     };
   }
-  // Another way - "const characterID = context.params!.characterID" instead of the check above.
   const characterID = context.params.characterID;
   try {
     const response = await fetch(
       `https://rickandmortyapi.com/api/character/${characterID}`
     );
     const data: Character = await response.json();
-    console.log("this is the character data from the server side:", data);
     return {
-      props: { data, error: null },
+      props: { data, error: null, characterID }, // pass it here
     };
   } catch (error) {
     console.error("Something went wrong with fetching the character :", error);
@@ -68,6 +89,7 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
       props: {
         data: null,
         error: "Something went wrong with fetching the character",
+        characterID: undefined,
       },
     };
   }

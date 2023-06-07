@@ -19,8 +19,10 @@ const CharactersPage = (props: Props) => {
               <div className={styles.charcterCard} key={character.id}>
                 <img src={character.image} alt={character.name} />
                 <h2>{character.name}</h2>
-                <p>{character.id}</p>
-                <Link href={`/characters/${character.id}`}>learn more</Link>
+                {/* <p>{character.id}</p> */}
+                <Link href={`/characters/${character.id}`}>
+                  <button>learn more</button>
+                </Link>
               </div>
             ))}
           </>
