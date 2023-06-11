@@ -18,7 +18,3 @@ interface Character {
   url: string;
   created: string;
 }
-
-// interface Error {
-//     error : Error | null
-// }

@@ -41,3 +41,14 @@
     height: 100%;
     margin: 0;
 } */
+
+.navLinks{
+    font: 3rem ;
+    font-weight: 800;
+    padding-left: 1rem;
+}
+
+/* .navLinks p {
+    margin: 1rem 2rem;
+} */
+
