@@ -9,19 +9,19 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 40px;
-    margin: 0 auto;
+    margin: 2rem auto;
 }
 .charcterCard{
-    width: 300px;
+    width: 180px;
     text-align: center;
     color: black;
-    border: 2px solid black;
+    border: 4px solid black;
     border-radius: 5px;
     overflow: hidden;
     background-color: white;
 }
 .charcterCard img {
- width:296px ;
+ width:172px ;
 }
 .moreInfoPage { 
     margin: 3rem auto;
@@ -47,8 +47,15 @@
     font-weight: 800;
     padding-left: 1rem;
 }
+.navLinks:hover{
+text-decoration: underline;
+}
 
-/* .navLinks p {
-    margin: 1rem 2rem;
-} */
-
+.activeLink {
+    font-weight: 800;
+    padding-left: 1rem;
+    color: white;
+}
+.activeLink:hover{
+text-decoration: underline;
+}

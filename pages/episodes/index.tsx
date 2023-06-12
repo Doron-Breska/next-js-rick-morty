@@ -93,8 +93,9 @@ const EpisodesIndex = () => {
                       key={i}
                       style={{
                         width: "45px",
-                        marginRight: "10px",
-                        marginBottom: "7px",
+                        // marginRight: "10px",
+                        // marginBottom: "7px",
+                        margin: "7px",
                         border: "1px solid black",
                       }}
                       src={character.image}
