@@ -4,6 +4,7 @@ import React from "react";
 type Props = {};
 
 const id = (props: Props) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const router = useRouter();
   console.log("this is the router object :", router.query);
   return (
