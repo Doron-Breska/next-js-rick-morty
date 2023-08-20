@@ -57,7 +57,9 @@ const EpisodesIndex = () => {
   return (
     <div>
       <h1>Episodes</h1>
-      <label htmlFor="se">Select a session</label>
+      <h1>
+        <label htmlFor="se">Select a session</label>
+      </h1>
       <br />
       <select name="se" onChange={handleSelectChange}>
         <option value="S01">Session 1</option>

@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             router.pathname === "/" ? styles.activeLink : styles.navLinks
           }
         >
-          Home
+          Episodes page
         </Link>
         <Link
           href="/characters"
@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         >
           Characters page
         </Link>
-        <Link
+        {/* <Link
           href="/episodes"
           className={
             router.pathname === "/episodes"
@@ -43,7 +43,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           }
         >
           Episodes page
-        </Link>
+        </Link> */}
       </div>
       <Component {...pageProps} />
     </MainLayout>

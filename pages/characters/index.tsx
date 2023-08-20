@@ -11,7 +11,6 @@ const CharactersPage = (props: Props) => {
   console.log("this is the charecters data from the client side", props.data);
   return (
     <>
-      <h1>characters page</h1>
       <div className={styles.charactersContainer}>
         {props.data.length > 1 && (
           <>

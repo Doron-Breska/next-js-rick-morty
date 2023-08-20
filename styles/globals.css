@@ -15,6 +15,10 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.controler {
+  text-align: center;
+}
 /* 
 @media (prefers-color-scheme: dark) {
   html {
