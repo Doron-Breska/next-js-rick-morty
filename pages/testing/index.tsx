@@ -13,10 +13,10 @@ const Index = (props: Props) => {
 
   useEffect(() => {
     const dialogElement = dialogRef.current;
-    const isModalOpen = sessionStorage.getItem("isModalOpen");
+    const isModalDialogOpen = sessionStorage.getItem("isModalDialogOpen");
 
     if (dialogElement) {
-      if (isModalOpen === "true" && !dialogElement.open) {
+      if (isModalDialogOpen === "true" && !dialogElement.open) {
         dialogElement.showModal();
       }
     }
@@ -32,7 +32,7 @@ const Index = (props: Props) => {
     const dialogElement = dialogRef.current;
     if (dialogElement && !dialogElement.open) {
       dialogElement.showModal();
-      sessionStorage.setItem("isModalOpen", "true");
+      sessionStorage.setItem("isModalDialogOpen", "true");
     }
   };
 
@@ -40,7 +40,7 @@ const Index = (props: Props) => {
     const dialogElement = dialogRef.current;
     if (dialogElement && dialogElement.open) {
       dialogElement.close();
-      sessionStorage.removeItem("isModalOpen");
+      sessionStorage.removeItem("isModalDialogOpen");
     }
   };
 

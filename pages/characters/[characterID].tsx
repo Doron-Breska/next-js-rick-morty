@@ -25,7 +25,7 @@ const character = ({ data, characterID }: Props) => {
       <p>Gender: {data.gender}</p>
       <img src={data.image} alt={data.name} />
       <h2>Test for passing information with context</h2>
-      <p>Test - character ID from context.params is: {characterID}</p>
+      <p>Character ID (from context.params is:) {characterID}</p>
       <div style={{ display: "flex", justifyContent: "space-around" }}>
         <Link
           href={
