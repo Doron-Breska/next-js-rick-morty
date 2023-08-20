@@ -93,6 +93,7 @@ const EpisodesIndex = () => {
                 </td>
                 <td style={{ border: "1px solid black", padding: "10px" }}>
                   {episode.characters.map((character, i) => (
+                    // eslint-disable-next-line @next/next/no-img-element
                     <img
                       key={i}
                       style={{
